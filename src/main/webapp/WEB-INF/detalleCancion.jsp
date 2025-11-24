@@ -14,14 +14,14 @@
     </nav>
 
     <div class="detalle-canciones">
-            <h1>${cancion.getTitulo()}</h1>
+            <h1>${cancion.titulo}</h1>
             <ul>
-                <li><strong>Artista:</strong> ${cancion.getArtista()}</li>
-                <li><strong>Album:</strong> ${cancion.getAlbum()}</li>
-                <li><strong>Género:</strong> ${cancion.getGenero()} </li>
-                <li><strong>Idioma:</strong> ${cancion.getIdioma() } </li>
-                <li><strong>Fecha de Creación:</strong> ${cancion.getFechaDeCreacion()} </li>
-                <li><strong>Fecha de Actualización:</strong> ${cancion.getFechaDeActualizacion()} </li>
+                <li><strong>Artista:</strong> ${cancion.artista}</li>
+                <li><strong>Album:</strong> ${cancion.album}</li>
+                <li><strong>Género:</strong> ${cancion.genero} </li>
+                <li><strong>Idioma:</strong> ${cancion.idioma } </li>
+                <li><strong>Fecha de Creación:</strong> ${cancion.fechaDeCreacion} </li>
+                <li><strong>Fecha de Actualización:</strong> ${cancion.fechaDeActualizacion} </li>
             </ul>
     </div>
 

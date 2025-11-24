@@ -15,8 +15,8 @@
 	            <ul class="listaDeCanciones">
 		            <c:forEach var="cancion" items="${listaCanciones}">
 			            <li>
-                            <a href="/canciones/detalle/${cancion.getId()}">
-                                <h3>${cancion.getTitulo()}</h3>
+                            <a href="/canciones/detalle/${cancion.id}">
+                                <h3>${cancion.titulo}</h3>
                             </a>
 			            </li>
 		            </c:forEach>
