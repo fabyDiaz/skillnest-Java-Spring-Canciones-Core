@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
+    <nav>
+        <a href="/canciones/formulario/agregar">Agregar</a>    
+    </nav>
         <div class="content">
 	        <div class="contenedorCanciones">
 	            <h1>Lista de Canciones</h1>
