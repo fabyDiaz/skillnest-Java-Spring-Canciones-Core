@@ -96,6 +96,7 @@ body {
 }
 
 /* Formulario */
+/* Formulario general */
 form {
     display: flex;
     flex-direction: column;
@@ -209,13 +210,28 @@ span[class*="error"] {
     font-weight: bold;
 }
 
+/* Formulario inline para botones */
+.form-inline {
+    display: inline;
+    max-width: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    gap: 0;
+}
+
 .boton{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
-.btnVolver{
+.btn{
     padding: 0.75rem;
     background-color: rgb(27, 38, 79);
     color: white;
@@ -224,12 +240,13 @@ span[class*="error"] {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 0.5rem;
+    text-decoration: none;
 }
 
-.btnVolver :hover{
-background-color: rgb(87, 108, 168);
+.btn:hover{
+    background-color: rgb(87, 108, 168);
 }
+
 /* Navegación */
 nav {
     background-color: rgb(27, 38, 79);
