@@ -23,9 +23,14 @@
                 <li><strong>Fecha de Creación:</strong> ${cancion.fechaDeCreacion} </li>
                 <li><strong>Fecha de Actualización:</strong> ${cancion.fechaDeActualizacion} </li>
             </ul>
-        <div class= "boton">
-            <a class="btnVolver" href="/canciones/formulario/editar/${cancion.id}">Editar</a>
-        <div>
+        <div class="boton">
+            <a class="btn" href="/canciones/formulario/editar/${cancion.id}">Editar</a>
+            <form class="form-inline" action="/canciones/eliminar/${cancion.id}" method="POST">
+                <input type="hidden" name="_method" value="DELETE"/>
+                <button class="btn">Eliminar</button>
+            </form>
+        </div>
+
     </div>
 
 </body>

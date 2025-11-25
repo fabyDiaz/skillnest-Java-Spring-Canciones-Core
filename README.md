@@ -77,3 +77,32 @@ Se implementó la capacidad de editar canciones existentes mediante un formulari
 - **Validaciones en edición**: Mismas validaciones que en creación para mantener integridad
 - **Actualización mediante PUT**: Uso de método HTTP PUT (simulado con POST) para actualizar registros
 
+Aquí está la extensión de Eliminar para tu documentación:
+markdown## Extensión: Agregar Canciones
+
+### Funcionalidad Agregada
+Se implementó la capacidad de crear nuevas canciones mediante un formulario web con:
+- **Validaciones del lado del servidor**: Campos con longitud mínima requerida usando `@Size`
+- **Binding de formularios**: Uso de Spring Form Tags con `modelAttribute` para enlazar objetos
+- **Manejo de errores**: Visualización de mensajes de validación específicos por campo con `<form:errors>`
+- **Persistencia POST**: Método POST para enviar datos y guardarlos en la base de datos
+
+## Extensión: Actualizar Canciones
+
+### Funcionalidad Agregada
+Se implementó la capacidad de editar canciones existentes mediante un formulario precargado con:
+- **Formulario prellenado**: Los campos se cargan automáticamente con los datos actuales de la canción
+- **Validaciones en edición**: Mismas validaciones que en creación para mantener integridad
+- **Actualización mediante PUT**: Uso de método HTTP PUT (simulado con POST) para actualizar registros
+
+## Extensión: Eliminar Canciones
+
+### Funcionalidad Agregada
+Se implementó la capacidad de eliminar canciones existentes de la base de datos con:
+- **Eliminación mediante DELETE**: Uso de método HTTP DELETE (simulado con POST y campo oculto `_method`)
+- **Servicio de eliminación**: Método `eliminaCancion(Long id)` en la capa de servicio para eliminar canciones por ID
+- **Controlador DELETE**: Ruta `@DeleteMapping("/canciones/eliminar/{idCancion}")` que procesa la eliminación
+- **Botón de eliminación**: Interfaz intuitiva en la vista de detalle con botón "Eliminar" que envía petición DELETE
+- **Redirección automática**: Después de eliminar, el usuario es redirigido a la lista de canciones
+
+
