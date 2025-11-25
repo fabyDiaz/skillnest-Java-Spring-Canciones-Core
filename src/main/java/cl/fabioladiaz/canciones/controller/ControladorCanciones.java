@@ -13,6 +13,7 @@ import cl.fabioladiaz.canciones.model.Cancion;
 import cl.fabioladiaz.canciones.service.ServicioCanciones;
 import jakarta.validation.Valid;
 
+
 @Controller
 public class ControladorCanciones {
 
@@ -46,10 +47,18 @@ public class ControladorCanciones {
         return "agregarCancion.jsp";
     }
 
+    @GetMapping("/canciones/formulario/editar/{idCancion}")
+    public String formularioEditarCancion(Model modelo, @PathVariable("idCancion") Long idCancion){
+        modelo.addAttribute("cancion", this.servicioCanciones.obtenerCancionPorId(idCancion));
+        return "editarCancion.jsp";
+    }
 
-
-
-
-
-
+    @PostMapping("/canciones/procesa/editar")
+    public String procesarEditarCancion(@Valid @ModelAttribute("cancion") Cancion cancion, BindingResult validaciones){
+         if (validaciones.hasErrors()) {
+            return "ediarCancion.jsp";
+        }
+        this.servicioCanciones.actualizaCancion(cancion);
+        return "redirect:/canciones";    
+    }
 }
