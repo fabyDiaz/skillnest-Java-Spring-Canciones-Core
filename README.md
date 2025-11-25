@@ -69,12 +69,11 @@ Se implementó la capacidad de crear nuevas canciones mediante un formulario web
 - **Manejo de errores**: Visualización de mensajes de validación específicos por campo con `<form:errors>`
 - **Persistencia POST**: Método POST para enviar datos y guardarlos en la base de datos
 
-### Flujo de Creación
-1. Usuario accede al formulario `/canciones/formulario/agregar`
-2. Completa campos: título, artista, álbum, género, idioma
-3. Al enviar, las validaciones verifican que los datos cumplan requisitos mínimos
-4. Si hay errores, se muestra el formulario nuevamente con mensajes de error
-5. Si es válido, se guarda en la base de datos y redirige a la lista de canciones
+## Extensión: Actualizar Canciones
 
-### Aprendizaje Clave
-Esta extensión completa el ciclo CRUD básico (Create + Read) implementando el patrón POST-Redirect-GET y demostrando la importancia de validaciones del lado del servidor para mantener la integridad de datos.
+### Funcionalidad Agregada
+Se implementó la capacidad de editar canciones existentes mediante un formulario precargado con:
+- **Formulario prellenado**: Los campos se cargan automáticamente con los datos actuales de la canción
+- **Validaciones en edición**: Mismas validaciones que en creación para mantener integridad
+- **Actualización mediante PUT**: Uso de método HTTP PUT (simulado con POST) para actualizar registros
+
