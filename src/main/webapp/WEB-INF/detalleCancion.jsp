@@ -10,13 +10,14 @@
 </head>
 <body>
     <nav>
-        <a href="/canciones">Volver</a>    
+        <a href="/artistas">Artistas</a>  
+        <a href="/canciones">Canciones</a>     
     </nav>
 
     <div class="detalle-canciones">
             <h1>${cancion.titulo}</h1>
             <ul>
-                <li><strong>Artista:</strong> ${cancion.artista}</li>
+                <li><strong>Artista:</strong> ${cancion.artista.nombre}</li>
                 <li><strong>Album:</strong> ${cancion.album}</li>
                 <li><strong>Género:</strong> ${cancion.genero} </li>
                 <li><strong>Idioma:</strong> ${cancion.idioma } </li>

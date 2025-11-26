@@ -12,17 +12,17 @@
     <nav>
         <a href="/artistas">Artistas</a>  
         <a href="/canciones">Canciones</a>   
-        <a href="/canciones/formulario/agregar">Agregar Canción</a> 
-        <a href="/artistas/formulario/agregar">Agregar Artista</a>        
+        <a href="/canciones/formulario/agregar">Agregar Canción</a>  
+        <a href="/artistas/formulario/agregar">Agregar Artista</a>    
     </nav>
         <div class="content">
 	        <div class="contenedorCanciones">
-	            <h1>Lista de Canciones</h1>
+	            <h1>Lista de Artistas</h1>
 	            <ul class="listaDeCanciones">
-		            <c:forEach var="cancion" items="${listaCanciones}">
+		            <c:forEach var="artista" items="${listaArtistas}">
 			            <li>
-                            <a href="/canciones/detalle/${cancion.id}">
-                                <h3>${cancion.titulo}</h3>
+                            <a href="/artistas/detalle/${artista.id}">
+                                <h3>${artista.nombre}</h3>
                             </a>
 			            </li>
 		            </c:forEach>
