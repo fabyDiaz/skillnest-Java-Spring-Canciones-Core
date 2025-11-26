@@ -1,12 +1,13 @@
 package cl.fabioladiaz.canciones.model;
 
 import java.time.LocalDate;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -21,10 +22,10 @@ public class Cancion {
     @Column(nullable = false)
     @Size(min = 5, message = "Debe contener al menos 5 caracteres.")
     private String titulo; 
-    
-    @Column(nullable = false)
-    @Size(min = 3, message = "Debe contener al menos 3 caracteres.")
-    private String artista;
+
+    @ManyToOne
+    @JoinColumn(name = "id_artista")
+    private Artista artista;
     
     @Column(nullable = false)
     @Size(min = 3, message = "Debe contener al menos 3 caracteres.")
@@ -42,7 +43,7 @@ public class Cancion {
     public Cancion() {
     }
 
-    public Cancion(String titulo, String artista, String album, String genero, String idioma) {
+    public Cancion(String titulo, Artista artista, String album, String genero, String idioma) {
         this.titulo = titulo;
         this.artista = artista;
         this.album = album;
@@ -70,12 +71,12 @@ public class Cancion {
     }
 
 
-    public String getArtista() {
+    public Artista getArtista() {
         return artista;
     }
 
 
-    public void setArtista(String artista) {
+    public void setArtista(Artista artista) {
         this.artista = artista;
     }
 
@@ -146,5 +147,5 @@ public class Cancion {
     protected void onUpdate(){
         this.fechaDeActualizacion = LocalDate.now();
     }
-    
+
 }

@@ -87,4 +87,14 @@ Se implementó la capacidad de eliminar canciones existentes de la base de datos
 - **Botón de eliminación**: Interfaz intuitiva en la vista de detalle con botón "Eliminar" que envía petición DELETE
 - **Redirección automática**: Después de eliminar, el usuario es redirigido a la lista de canciones
 
+## Extensión: Canciones y Artistas (Relación Uno a Muchos)
+
+### Funcionalidad Agregada
+Se implementó una relación de uno a muchos entre Artistas y Canciones, permitiendo gestionar artistas y asociar múltiples canciones a cada artista:
+- **Modelo de Artista**: Nueva entidad con información completa del artista
+- **Relación One-to-Many**: Un artista puede tener múltiples canciones, pero cada canción pertenece a un solo artista
+- **CRUD de Artistas**: Crear, leer y visualizar artistas
+- **Selector de Artistas**: Dropdown en formulario de canciones para seleccionar el artista
+- **Navegación bidireccional**: Enlaces entre vistas de canciones y artistas
+
 

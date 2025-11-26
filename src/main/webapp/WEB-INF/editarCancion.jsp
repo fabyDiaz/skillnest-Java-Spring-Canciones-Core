@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isErrorPage="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -11,7 +12,8 @@
     </head>
     <body>
      <nav>
-        <a href="/canciones">Volver</a>    
+        <a href="/artistas">Artistas</a>  
+        <a href="/canciones">Canciones</a>   
     </nav>
         <h1>Agregar Canción:</h1>
         <form:form action="/canciones/procesa/editar" method="POST" modelAttribute="cancion">
@@ -21,9 +23,15 @@
             <form:input type="text" path="titulo"/>
             <form:errors path="titulo"/>
 
-            <form:label path="artista">Artista:</form:label>
-            <form:input type="text" path="artista"/>
-            <form:errors path="artista"/>
+           <label for="artista">Artista:</label>
+            <select name="artista.id" id="artista">
+                <c:forEach items="${listaArtistas}" var="artista">
+                    <option value="${artista.id}" 
+                        ${cancion.artista.id == artista.id ? 'selected' : ''}>
+                        ${artista.nombre}
+                    </option>
+                </c:forEach>
+            </select>
 
             <form:label path="album">Album:</form:label>
             <form:input type="text" path="album"/>

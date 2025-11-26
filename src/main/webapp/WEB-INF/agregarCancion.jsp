@@ -10,7 +10,8 @@
     </head>
     <body>
      <nav>
-        <a href="/canciones">Volver</a>    
+        <a href="/artistas">Artistas</a>  
+        <a href="/canciones">Canciones</a>  
     </nav>
         <h1>Agregar Canción:</h1>
         <form:form action="/canciones/procesa/agregar" method="POST" modelAttribute="cancion">
@@ -19,8 +20,9 @@
             <form:errors path="titulo"/>
 
             <form:label path="artista">Artista:</form:label>
-            <form:input type="text" path="artista"/>
-            <form:errors path="artista"/>
+            <form:select path="artista.id">
+                <form:options items="${listaArtistas}" itemValue="id" itemLabel="nombre"/>
+            </form:select>
 
             <form:label path="album">Album:</form:label>
             <form:input type="text" path="album"/>
