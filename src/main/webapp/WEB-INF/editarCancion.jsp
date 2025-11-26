@@ -45,6 +45,8 @@
             <form:input type="text" path="idioma"/>
             <form:errors path="idioma"/>
 
+            <input type="hidden" name="fechaDeCreacion" value="${cancion.fechaDeCreacion}"/>
+
             <input type="hidden" name="id" value="${cancion.id}"/>
 
             <input type="submit" value="Editar"/>

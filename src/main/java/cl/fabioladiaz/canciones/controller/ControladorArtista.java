@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import cl.fabioladiaz.canciones.model.Artista;
-import cl.fabioladiaz.canciones.model.Cancion;
 import cl.fabioladiaz.canciones.service.ServicioArtistas;
 import jakarta.validation.Valid;
 
